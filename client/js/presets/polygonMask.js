@@ -36,7 +36,7 @@ export default {
                 area: 2000
             },
             limit: 0,
-            value: 300
+            value: 0 // Updated later based on the display text
         },
         opacity: {
             animation: {
