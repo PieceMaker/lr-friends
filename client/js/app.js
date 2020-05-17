@@ -1,14 +1,9 @@
 import { tsParticles } from "tsparticles";
+
+import fetchPatch from "./patch/fetch";
 import presets from "./presets/polygonMask";
 
-window.fetch = function() {
-    console.log('Fetch intercepted.');
-    const response = {
-        ok: true,
-        text: function() { return presets.polygon.svg }
-    };
-    return Promise.resolve(response);
-}
+window.fetch = fetchPatch(presets.polygon.svg);
 
 tsParticles.load('tsparticles', presets)
     .then((container) => {
