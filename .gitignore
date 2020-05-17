@@ -1,0 +1,9 @@
+# Parcel build files
+.cache/
+dist/
+
+# Node modules
+node_modules/
+
+# Webstorm IDE
+.idea/
