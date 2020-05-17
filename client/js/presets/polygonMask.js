@@ -82,8 +82,6 @@ export default {
     background: {
         color: "#000000",
         image: "",
-        position: "50% 50%",
-        repeat: "no-repeat",
         size: "cover"
     }
 }
