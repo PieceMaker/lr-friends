@@ -74,7 +74,7 @@ export default {
             y: 50
         },
         inlineArrangement: "equidistant",
-        scale: 0.5,
+        scale: 1,
         type: "inline",
         url: "xml"
     },

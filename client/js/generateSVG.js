@@ -10,6 +10,8 @@ const textToSVGPromise = new Promise((resolve, reject) => {
     });
 });
 
+const fontSize = Math.round(window.innerHeight / 3);
+
 /**
  * This function generates and returns an SVG XML string for the specified
  * text string.
@@ -19,7 +21,7 @@ const textToSVGPromise = new Promise((resolve, reject) => {
  */
 module.exports = function(text = 'unlikely') {
     const attributes = {fill: 'none', stroke: 'black'};
-    const options = {x: 0, y: 0, fontSize: 640, anchor: 'top', attributes: attributes};
+    const options = {x: 0, y: 0, fontSize, anchor: 'top', attributes: attributes};
     return textToSVGPromise
         .then((textToSVG) => {
             return textToSVG.getSVG(text, options);
