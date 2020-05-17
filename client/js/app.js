@@ -1,9 +1,10 @@
 import { tsParticles } from "tsparticles";
 
 import fetchPatch from "./patch/fetch";
+import generateSVG from "./generateSVG";
 import presets from "./presets/polygonMask";
 
-window.fetch = fetchPatch(presets.polygon.svg);
+window.fetch = fetchPatch(generateSVG());
 
 tsParticles.load('tsparticles', presets)
     .then((container) => {

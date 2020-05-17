@@ -7,11 +7,13 @@
     "start": "node server.js",
     "build:cache-clean": "rimraf dist/* .cache",
     "build:clean": "rimraf dist/*",
-    "build:watch": "npm run build:clean && parcel watch client/index.html"
+    "build:copy": "cpr client/static/ dist/static",
+    "build:watch": "npm run build:clean && npm run build:copy && parcel watch client/index.html"
   },
   "author": "Jonathan Adams <jd.adams16@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "cpr": "^3.0.1",
     "express": "^4.17.1",
     "parcel": "^1.12.4",
     "pathseg": "^1.2.0",
