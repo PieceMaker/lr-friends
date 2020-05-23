@@ -18,13 +18,17 @@ const fontSize = Math.round(minDimension / 3);
  * text string.
  *
  * @param {string} text
- * @returns {Promise<string>}
+ * @returns {Promise<{width: number, xml: string}>}
  */
 module.exports = function(text = 'unlikely') {
     const attributes = {fill: 'none', stroke: 'black'};
     const options = {x: 0, y: 0, fontSize, anchor: 'top', attributes: attributes};
     return textToSVGPromise
         .then((textToSVG) => {
-            return textToSVG.getSVG(text, options);
+            const { width } = textToSVG.getMetrics(text, options);
+            return {
+                width,
+                xml: textToSVG.getSVG(text, options)
+            };
         });
 }

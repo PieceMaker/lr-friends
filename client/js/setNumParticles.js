@@ -8,7 +8,7 @@
  * @param {number} [particlesPerLetter=40]
  * @returns {void}
  */
-module.exports = function(presets, text, particlesPerLetter = 40) {
+module.exports = function(presets, text, particlesPerLetter = 25) {
     const numLetters = text.replace(/\s/g,'').length;
     presets.particles.number.value = numLetters * particlesPerLetter;
 }
