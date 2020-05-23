@@ -10,8 +10,7 @@ const textToSVGPromise = new Promise((resolve, reject) => {
     });
 });
 
-const minDimension = Math.min(window.innerHeight, window.innerWidth);
-const fontSize = Math.round(minDimension / 3);
+const fontSize = Math.round(window.innerWidth / 3);
 
 /**
  * This function generates and returns an SVG XML string for the specified
