@@ -6,8 +6,10 @@ import generateSVG from "./generateSVG";
 import presets from "./presets/polygonMask";
 import setNumParticles from "./setNumParticles";
 
-const text = 'highly improbable';
-setNumParticles(presets, text);
+const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+const text = 'improbable';
+setNumParticles(presets, text, isMobile);
 return generateSVG(text)
     .then((svg) => {
         window.fetch = fetchPatch(svg.xml);
