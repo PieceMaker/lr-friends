@@ -37,13 +37,31 @@ const answers: Answers = {
     ]
 }
 
-export default function(): Answer {
+export default function(): {answer: Answer, colors: { background: string, particles: string }} {
     const random = Math.random();
     if(random <= 0.33) {
-        return randomAnswer(answers.yes);
+        return {
+            answer: randomAnswer(answers.yes),
+            colors: {
+                background: "#FFC0CB",
+                particles: "#000000"
+            }
+        }
     } else if (random > 0.33 && random <= 0.67) {
-        return randomAnswer(answers.maybe);
+        return {
+            answer: randomAnswer(answers.maybe),
+            colors: {
+                background: "#A9A9B0",
+                particles: "#000000"
+            }
+        };
     } else {
-        return randomAnswer(answers.no);
+        return {
+            answer: randomAnswer(answers.no),
+            colors: {
+                background: "#000000",
+                particles: "#ffffff"
+            }
+        };
     }
 }

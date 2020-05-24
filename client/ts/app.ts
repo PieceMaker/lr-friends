@@ -10,7 +10,10 @@ import setNumParticles from "./setNumParticles";
 const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
 // const text = 'improbable';
-const answer = getAnswer();
+const { answer, colors } = getAnswer();
+presets.background.color = colors.background;
+presets.particles.color.value = colors.particles;
+presets.particles.lineLinked.color = colors.particles;
 setNumParticles(presets, answer.text, isMobile);
 generateSVG(answer.text)
     .then((svg) => {
