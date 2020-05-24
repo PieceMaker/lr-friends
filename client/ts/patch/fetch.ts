@@ -4,7 +4,7 @@
  * @param {string} svg
  * @returns {function(): Promise<{text: (function(): string), ok: boolean}>}
  */
-module.exports = function(svg) {
+export default function(svg: string): () => Promise<{text: () => string, ok: boolean}> {
     return function() {
         const response = {
             ok: true,

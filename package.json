@@ -19,6 +19,7 @@
     "pathseg": "^1.2.0",
     "rimraf": "^3.0.2",
     "text-to-svg": "^3.1.5",
-    "tsparticles": "^1.14.1"
+    "tsparticles": "^1.14.1",
+    "typescript": "^3.9.3"
   }
 }

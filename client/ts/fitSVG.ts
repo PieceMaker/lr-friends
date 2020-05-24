@@ -1,10 +1,12 @@
+import { Preset } from "./interfaces/Preset";
+
 /**
  * Rounds the given number to two decimal places.
  *
  * @param {number} number
  * @return {number}
  */
-function twoDecimalRound(number) {
+function twoDecimalRound(number: number): number {
     return Math.round(number * 100) / 100;
 }
 
@@ -19,7 +21,7 @@ function twoDecimalRound(number) {
  * @param presets
  * @returns {void}
  */
-module.exports = function(svg, presets) {
+export default function(svg: {width: number, xml: string}, presets: Preset): void {
     if(svg.width > window.innerWidth) {
         const maxWidth = 0.9 * window.innerWidth;
         presets.polygon.scale = twoDecimalRound(maxWidth / svg.width);

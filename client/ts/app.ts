@@ -10,11 +10,13 @@ const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
 const text = 'improbable';
 setNumParticles(presets, text, isMobile);
-return generateSVG(text)
+generateSVG(text)
     .then((svg) => {
+        // @ts-ignore
         window.fetch = fetchPatch(svg.xml);
         fitSVG(svg, presets);
 
+        // @ts-ignore
         tsParticles.load('tsparticles', presets)
             .then((container) => {
                 console.log('tsParticles config loaded.');
