@@ -1,5 +1,6 @@
 import { tsParticles } from "tsparticles";
 
+import getAnswer from "./getAnswer";
 import fetchPatch from "./patch/fetch";
 import fitSVG from "./fitSVG";
 import generateSVG from "./generateSVG";
@@ -8,9 +9,10 @@ import setNumParticles from "./setNumParticles";
 
 const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
-const text = 'improbable';
-setNumParticles(presets, text, isMobile);
-generateSVG(text)
+// const text = 'improbable';
+const answer = getAnswer();
+setNumParticles(presets, answer.text, isMobile);
+generateSVG(answer.text)
     .then((svg) => {
         // @ts-ignore
         window.fetch = fetchPatch(svg.xml);
