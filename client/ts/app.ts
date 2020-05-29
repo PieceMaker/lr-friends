@@ -21,6 +21,8 @@ const renderParticles = function(svg: {width: number, xml: string}) {
     }
     document.body.append(particleDiv);
 
+    // @ts-ignore
+    window.fetch = fetchPatch(svg.xml);
     fitSVG(svg, presets);
     // @ts-ignore
     tsParticles.load(particlesID, presets)
@@ -36,7 +38,9 @@ presets.particles.lineLinked.color = colors.particles;
 setNumParticles(presets, answer.text, isMobile);
 generateSVG(answer.text)
     .then((svg) => {
-        // @ts-ignore
-        window.fetch = fetchPatch(svg.xml);
         renderParticles(svg);
+
+        window.addEventListener("resize", function() {
+            renderParticles(svg);
+        });
     });
