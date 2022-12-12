@@ -15,7 +15,7 @@
   "license": "MIT",
   "dependencies": {
     "cpr": "^3.0.1",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "parcel": "^1.12.4",
     "pathseg": "^1.2.0",
     "rimraf": "^3.0.2",
