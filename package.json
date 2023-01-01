@@ -16,7 +16,7 @@
   "dependencies": {
     "cpr": "^3.0.1",
     "express": "^4.17.1",
-    "parcel": "^1.12.4",
+    "parcel": "^2.8.2",
     "pathseg": "^1.2.0",
     "rimraf": "^3.0.2",
     "text-to-svg": "^3.1.5",
